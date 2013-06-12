@@ -7,7 +7,6 @@ class Platform::ProblemsController < ApplicationController
   # GET /platform/problems/1
   def show
     @platform_problem = Platform::Problem.find(params[:id])
-    render text: Platform::Problem.get_problem(params[:id])
   end
 
   # GET /platform/problems/new
@@ -35,7 +34,6 @@ class Platform::ProblemsController < ApplicationController
   # PUT /platform/problems/1
   def update
     @platform_problem = Platform::Problem.find(params[:id])
-
     if @platform_problem.update_attributes(params[:platform_problem])
       redirect_to @platform_problem, notice: 'Problem was successfully updated.'
     else

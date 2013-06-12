@@ -1,0 +1,2 @@
+module Platform::ProblemHelper
+end

@@ -1,4 +1,23 @@
 Galel::Application.routes.draw do
+
+
+
+  get "problem/view"
+
+  get "problem/new"
+
+  get "problem/create"
+
+  get "problem/edit"
+
+  match '/login' => 'welcome#login'
+  match '/validate' => 'welcome#validate'
+
+   namespace :platform do
+    root to: 'dashboard#index'
+    #match ':controller(/:action(/:id))'
+   end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +67,7 @@ Galel::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

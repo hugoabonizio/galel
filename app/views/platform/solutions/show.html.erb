@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Version:</b>
+  <%= @platform_solution.version %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @platform_solution.status %>
+</p>
+
+<p>
+  <b>Solution:</b>
+  <%= @platform_solution.solution %>
+</p>
+
+<p>
+  <b>Attach:</b>
+  <%= @platform_solution.attach %>
+</p>
+
+
+<%= link_to 'Edit', edit_platform_solution_path(@platform_solution) %> |
+<%= link_to 'Back', platform_solutions_path %>

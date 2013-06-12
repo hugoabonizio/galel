@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Problem:</b>
+  <%= @platform_problem.problem %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @platform_problem.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_platform_problem_path(@platform_problem) %> |
+<%= link_to 'Back', platform_problems_path %>

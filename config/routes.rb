@@ -1,20 +1,17 @@
 Galel::Application.routes.draw do
 
 
+  namespace :platform do
+    resources :solutions
+  end
 
-  get "problem/view"
-
-  get "problem/new"
-
-  get "problem/create"
-
-  get "problem/edit"
 
   match '/login' => 'welcome#login'
   match '/validate' => 'welcome#validate'
 
    namespace :platform do
     root to: 'dashboard#index'
+    resources :problems
     #match ':controller(/:action(/:id))'
    end
 

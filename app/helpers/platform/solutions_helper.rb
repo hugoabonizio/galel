@@ -1,0 +1,2 @@
+module Platform::SolutionsHelper
+end

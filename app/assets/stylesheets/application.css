@@ -40,6 +40,14 @@ body {
   padding: 35px;
 }
 
+#logout {
+  text-align: right;
+  color: #b9b9b9;
+  font-family: helvetica;
+  font-size: 15px;
+  margin: 0 auto;
+}
+
 #title hgroup h1{
   color: #a80823;
   font-family: helvetica;

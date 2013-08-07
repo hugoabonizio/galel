@@ -1,0 +1,106 @@
+*{
+	font-size: 15px; 
+
+}
+* hr{
+	color:  #b9b9b9;
+}
+
+* body{
+	background-image: url("texturegrey2.jpg");
+	background-repeat: repeat; 
+}
+
+#body {
+	width: 800px;
+	margin: 0 auto;
+	padding-top: 60px;
+	
+}
+
+#title hgroup{
+	padding-bottom: 40px;
+}
+
+#title {
+	padding: 35px;
+}
+
+#title hgroup h1{
+	color: #a80823;
+	font-family: helvetica;
+	font-size: 60px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#title hgroup h2{
+	color: #b9b9b9;
+	font-family: helvetica;
+	font-size: 13px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#navegar{
+	/*width:60%;*/
+	/*margin: 0 auto;*/
+	text-align: center;
+}
+
+div.navegar input{
+	width: 400px;
+	text-align: center;
+}
+
+div.navegar a{
+	text-decoration: none;
+	 padding:2px ;
+	line-height: 30px;
+	font-size: 20px;
+	background-color: #a80823;
+	color:#ffffff;
+	text-align: center;
+}
+
+div.navegar a:hover{
+	color: #a80823;
+	background: none;
+}
+
+#problems{
+	width:650px;
+	/*margin: 0 auto;*/
+}
+
+#problems ul{
+	list-style-type: none;
+}
+
+#problems ul li{
+	float:left;
+}
+
+#problems ul li a{
+	color: #a80823;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+#problems ul li a:hover{
+	color: #79091c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

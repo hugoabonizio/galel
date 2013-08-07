@@ -8,12 +8,30 @@
 </head>
 <body>
   <% if login? %>
-  
+    <a></a>
   <% else %>
     <%= link_to 'Login', login_path %>
   <% end %>
 
+
+<div id="body">
+  <div id="title">
+  <hgroup>
+  <h1>GALEL</h1>
+  <h2>GAIA Learned Lessons</h2>
+ </hgroup>
+  <br/>
+ </div>
+
+ <%= link_to 'Novo problema', new_platform_problem_path %>
+ <%= link_to 'Listar', '/platform/problems' %>
+ <%= link_to 'Buscar', '/platform' %>
+
 <%= yield %>
+
+
+
+</div>
 
 </body>
 </html>

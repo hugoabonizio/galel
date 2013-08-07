@@ -1,0 +1,13 @@
+<hr>
+<div id="problems">
+  <ul>
+    <% @result.each do |r| %>
+    	<li>
+        <h1><a href="#"><%= r.problem %></a><h1>
+        <br />
+        <%= r.description %>
+        <hr>
+      </li>
+    <% end %>
+  </ul>
+</div>

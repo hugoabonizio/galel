@@ -1,19 +1,17 @@
 Galel::Application.routes.draw do
 
 
-  namespace :platform do
-    resources :solutions
-  end
-
-
   match '/login' => 'welcome#login'
   match '/validate' => 'welcome#validate'
+  match '/logout' => 'welcome#logout'
 
-   namespace :platform do
+  namespace :platform do
     root to: 'dashboard#index'
+    match '/search' => 'dashboard#search'
+    resources :solutions
     resources :problems
     #match ':controller(/:action(/:id))'
-   end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

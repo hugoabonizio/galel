@@ -6,7 +6,14 @@ class Platform::ProblemsController < ApplicationController
 
   # GET /platform/problems/1
   def show
-    @platform_problem = Platform::Problem.find(params[:id])
+    @platform_problem = Platform::Problem.where(ident: params[:ident]).first
+    @last_solution = Platform::Solution.where(:ident => @platform_problem.ident)
+    if !@last_solution.blank?
+      @last_solution = @last_solution.order("version DESC").first
+    else
+      @last_solution = nil
+    end
+    # @platform_problem
   end
 
   # GET /platform/problems/new
@@ -24,7 +31,7 @@ class Platform::ProblemsController < ApplicationController
     params[:platform_problem][:ident] = rand(32 ** 32).to_s(32)
     @platform_problem = Platform::Problem.new(params[:platform_problem])
     if @platform_problem.save
-      redirect_to @platform_problem, notice: 'Criado com sucesso!'
+      redirect_to '/platform/problems/show/?ident=' + params[:platform_problem][:ident], notice: 'Criado com sucesso!'
     else
       redirect_to new_platform_problem_path, notice: 'Falha na criacao'
     end
@@ -45,6 +52,6 @@ class Platform::ProblemsController < ApplicationController
   def destroy
     @platform_problem = Platform::Problem.find(params[:id])
     @platform_problem.destroy
-    format.html { redirect_to platform_problems_url
+    redirect_to platform_problems_url
   end
 end

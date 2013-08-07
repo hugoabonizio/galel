@@ -16,4 +16,10 @@ class WelcomeController < ApplicationController
       redirect_to login_path, notice: 'Falha no login'
     end
   end
+
+  def logout
+    session[:login] = false
+    session[:user] = nil
+    redirect_to '/'
+  end
 end

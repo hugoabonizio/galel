@@ -14,11 +14,11 @@
   <b>Solution:</b>
   <%= @platform_solution.solution %>
 </p>
-
-<p>
-  <b>Link to Attach File:</b>
-  <%= link_to 'Download File', @platform_solution.resume.url %>
-</p>
-
+<% if @platform_solution.resume.nil? %>
+	<p>
+	  <b>Link to Attach File:</b>
+	  <%= link_to 'Download File', @platform_solution.resume.url %>
+	</p>
+<% end %>
 <%= link_to 'Edit', edit_platform_solution_path(@platform_solution) %> |
-<%= link_to 'Back', platform_solutions_path %>
+<%= link_to 'Back', platform_problems_path %>

@@ -19,9 +19,11 @@
   <hgroup>
   <a href='/' style = "text-decoration:none"><h1>GALEL</h1></a>
   <h2>GAIA Learned Lessons</h2>
-  <div id = "logout">
-    <a href="/logout"><h3>Logout</h3></a>
-  </div>
+  <% if login? %>
+    <div id = "logout">
+      <a href="/logout"><h3>Logout</h3></a>
+    </div>
+  <% end %>
  </hgroup><br/>
  </div>
 

@@ -6,7 +6,7 @@ class Platform::ProblemsController < ApplicationController
 
   # GET /platform/problems/1
   def show
-    @platform_problem = Platform::Problem.where(ident: params[:ident]).first
+    @platform_problem = Platform::Problem.where(id: params[:id]).first
     @last_solution = Platform::Solution.where(:ident => @platform_problem.ident)
     if !@last_solution.blank?
       @last_solution = @last_solution.order("version DESC").first

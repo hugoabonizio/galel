@@ -10,6 +10,20 @@
   <%= @platform_problem.description %>
 </p>
 
+<% if !@last_solution.nil? %>
+	<p>
+	  <b>Solution (last, order by date):</b>
+	  <%= @last_solution.solution%> 
+	</p>
 
-<%= link_to 'Edit', edit_platform_problem_path(@platform_problem) %> |
-<%= link_to 'Back', platform_problems_path %>
+	<p>
+	  <b>Version:</b>
+	  <%= @last_solution.version%> 
+	</p>	 
+<% end %>
+	<%= link_to 'New Solution', new_platform_solution_path + '?s=' + @platform_problem.ident %>
+
+
+
+<!-- <%= link_to 'Edit', edit_platform_problem_path(@platform_problem) %> -->
+<!-- <%= link_to 'Back', platform_problems_path %> -->

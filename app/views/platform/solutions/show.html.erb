@@ -16,10 +16,9 @@
 </p>
 
 <p>
-  <b>Attach:</b>
-  <%= @platform_solution.attach %>
+  <b>Link to Attach File:</b>
+  <%= link_to 'Download File', @platform_solution.resume.url %>
 </p>
-
 
 <%= link_to 'Edit', edit_platform_solution_path(@platform_solution) %> |
 <%= link_to 'Back', platform_solutions_path %>

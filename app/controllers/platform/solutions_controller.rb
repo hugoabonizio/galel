@@ -12,6 +12,8 @@ class Platform::SolutionsController < ApplicationController
   # GET /platform/solutions/new
   def new
     @platform_solution = Platform::Solution.new
+    @platform_solution.ident = params[:s]
+    @platform_solution
   end
 
   # GET /platform/solutions/1/edit

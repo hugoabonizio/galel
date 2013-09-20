@@ -11,23 +11,16 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :version %><br />
-    <%= f.number_field :version %>
+    <%= f.text_area :solution, size: '60x5', class: 'span9', placeholder: 'Nova solução' %>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :solution %><br />
-    <%= f.text_area :solution %>
-  </div>
-  <div class="field">
-  <%= f.label :resume %><br />
   <%= f.file_field :resume %>
   </div>
 
+  <input type="hidden" name="platform_solution[ident]" value="<%= params[:s] %>">
+
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <button class="btn btn-success" type="submit">Enviar</button>
   </div>
 <% end %>

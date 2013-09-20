@@ -4,13 +4,15 @@ Galel::Application.routes.draw do
   match '/login' => 'welcome#login'
   match '/validate' => 'welcome#validate'
   match '/logout' => 'welcome#logout'
+  
+  root to: 'welcome#login'
 
   namespace :platform do
     root to: 'dashboard#index'
     match '/search' => 'dashboard#search'
     resources :solutions
-    resources :problems
-    #match ':controller(/:action(/:id))'
+    resources :problems, except: [:show]
+    match 'problems/:ident' => 'problems#show'
   end
 
   # The priority is based upon order of creation:
@@ -62,11 +64,4 @@ Galel::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'welcome#login'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

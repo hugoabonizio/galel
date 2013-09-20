@@ -12,8 +12,6 @@ class Platform::SolutionsController < ApplicationController
   # GET /platform/solutions/new
   def new
     @platform_solution = Platform::Solution.new
-    @platform_solution.ident = params[:s]
-    @platform_solution
   end
 
   # GET /platform/solutions/1/edit
@@ -23,9 +21,10 @@ class Platform::SolutionsController < ApplicationController
 
   # POST /platform/solutions
   def create
+    params[:platform_solution][:status] = 0
     @platform_solution = Platform::Solution.new(params[:platform_solution])
     if @platform_solution.save
-      redirect_to @platform_solution, notice: 'Solution was successfully created.'
+      redirect_to platform_problems_path, notice: 'Enviada com sucesso'
     else
       redirect_to new_platform_solution_path, notice: 'Problema na criacao'
     end
@@ -34,6 +33,7 @@ class Platform::SolutionsController < ApplicationController
   # PUT /platform/solutions/1
   def update
     @platform_solution = Platform::Solution.find(params[:id])
+    params[:platform_solution][:status] = 0
     if @platform_solution.update_attributes(params[:platform_solution])
       redirect_to @platform_solution, notice: 'Solution was successfully updated.'
     else

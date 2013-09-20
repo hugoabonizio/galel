@@ -7,35 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<!--   <% if login? %>
-    <a></a>
-  <% else %>
-    <%= link_to 'Login', login_path %>
-  <% end %> -->
 
-
-<div id="body">
-  <div id="title">
-  <hgroup>
-  <a href='/' style = "text-decoration:none"><h1>GALEL</h1></a>
-  <h2>GAIA Learned Lessons</h2>
-  <% if login? %>
-    <div id = "logout">
-      <a href="/logout"><h3>Logout</h3></a>
-    </div>
-  <% end %>
- </hgroup><br/>
- </div>
-
-<%if login? %>
- <%= link_to 'Novo problema', new_platform_problem_path %>
- <%= link_to 'Listar', '/platform/problems' %>
- <%= link_to 'Buscar', '/platform' %>
+<% if login? %>
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+        <li><%= link_to 'Novo problema', new_platform_problem_path %></li>
+        <li><%= link_to 'Listar', '/platform/problems' %></li>
+        <li><%= link_to 'Buscar', '/platform' %></li>
+    </ul>
+    <ul class="nav pull-right">
+      <li><%= link_to 'Sair', '/logout' %></li>
+    </ul>
+  </div>
+</div>
 <%end%>
 
- <%= yield %>
 
+<div id="container">
 
+  <div style="width: 800px; margin: 0 auto;">
+  <div id="title">
+    <a href='/' style = "text-decoration:none"><h1>GALEL</h1></a>
+    <h2>GAIA's Learned Lessons</h2>
+  </div>
+
+  <% if notice %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% end %>
+
+  <%= yield %>
+  </div>
 </div>
 
 </body>

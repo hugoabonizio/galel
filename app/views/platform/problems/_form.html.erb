@@ -10,16 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <br>
   <div class="field">
-    <%= f.label :problem %><br />
-    <%= f.text_area :problem %>
+    <%= f.text_area :problem, size: '60x5', class: 'span9', placeholder: 'Descreva o problema rapidamente' %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, size: '60x5', class: 'span9', placeholder: 'Forneça uma descrição mais detalhada do problema'  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <button class="btn btn-success" type="submit">Enviar</button>
   </div>
 <% end %>

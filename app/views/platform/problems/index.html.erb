@@ -1,11 +1,8 @@
 <%if !@platform_problems.blank? %>
-  <table>
+  <table class="table">
     <tr>
-      <th>Problem</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>Description</th>
+      <th>Problema</th>
+      <th>Descrição</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,13 +12,10 @@
 <% @platform_problems.each do |platform_problem| %>
   <tr>
     <td><%= platform_problem.problem %></td>
-    <th></th>
-    <th></th>
-    <th></th>
     <td><%= platform_problem.description %></td>
-    <td><%= link_to 'Show', platform_problem_path(platform_problem) %></td>
-    <td><%= link_to 'Edit', edit_platform_problem_path(platform_problem) %></td>
-    <td><%= link_to 'Destroy', platform_problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', "/platform/problems/#{platform_problem.ident}" %></td>
+    <td><%= link_to 'Editar', edit_platform_problem_path(platform_problem) %></td>
+    <td><%= link_to 'Deletar', platform_problem, method: :delete, data: { confirm: 'Certeza?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -1,29 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Problem:</b>
+  <b>Problema:</b>
   <%= @platform_problem.problem %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Descrição:</b>
   <%= @platform_problem.description %>
 </p>
 
-<% if !@last_solution.nil? %>
+<% if @last_solution.nil? %>
+	<div class="alert alert-error">Nenhuma solução cadastrada ainda</div>
+<% else %>
 	<p>
-	  <b>Solution (last, order by date):</b>
+	  <b>Solução:</b>
 	  <%= @last_solution.solution%> 
 	</p>
 
 	<p>
-	  <b>Version:</b>
+	  <b>Versão:</b>
 	  <%= @last_solution.version%> 
 	</p>	 
 <% end %>
-	<%= link_to 'New Solution', new_platform_solution_path + '?s=' + @platform_problem.ident %>
-
-
-
-<!-- <%= link_to 'Edit', edit_platform_problem_path(@platform_problem) %> -->
-<!-- <%= link_to 'Back', platform_problems_path %> -->
+<%= link_to 'Enviar nova solução', new_platform_solution_path + '?s=' + @platform_problem.ident %>
